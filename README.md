@@ -18,6 +18,25 @@ We map out the values of a subset of the latent space on a grid and pass each of
 
 ![Latent Space Morph](/data/examples/latent_morph.jpg)
 
-# gans
-Implementing different variations of GANs using PyTorch and TensorFlow
+# Original GAN
 
+## Examples
+
+GAN was trained on data from MNIST dataset. Here is how the digits from the dataset look like:
+
+![MNIST Grid](/data/examples/mnist_grid.jpg)
+
+You can see how the network is slowly learning to capture the data distribution during training:
+
+![MNIST Training](/data/examples/gan_progress.gif)
+
+After the generator is trained we can use it to generate all 10 digits:
+
+![GAN generated](/data/examples/generated_by_gan.jpg)
+
+Similarly to how it was done in VAE, we can take 2 generated numbers, save their latent vectors, and subsequently linearly or spherically
+interpolate between them to generate new images and understand how the latent space is structured:
+
+![GAN Interpolated](/data/examples/gan_interpolate.jpg)
+
+We can see how the number 4 is slowly morphing into 9 and then into the number 3.
